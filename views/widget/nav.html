@@ -1,0 +1,23 @@
+<nav class="navbar navbar-default" style="color:blue;">  <!-- navbar-default-->
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/" style="color:black;">Forums</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/about" >About me</a></li>
+        <li><a href="#" ng-if="user_profile" >dashboard</a></li>
+     </ul>
+    <ul class="nav navbar-nav navbar-right">
+       <li ng-if="user_profile"><a href="#" >การแจ้งเตือนทั้งหมด <span class="badge">3</span></a></li>
+        <li ng-if="user_profile"><a href="/logout" >ออกจากระบบ</a></li>
+        
+        <li>
+          <a href="/auth/facebook" ng-if="!user_profile">
+          <img ng-src="/img/facebook-login.png" width="30%">
+        </a>
+      </li>
+    </ul>
+    </div>
+  </div>
+</nav>

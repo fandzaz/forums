@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html ng-app="forums">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" >
+    <style>
+    body {
+        background-color: #EEEEEE;
+      }
+      .jumbotron{
+        background-color: #FFFFFF;
+      }
+
+      .navbar-default{
+        background-color: #FFFFFF;
+      }
+
+    </style>
+    <title>Forums Beta</title>
+  </head>
+  <body ng-controller="forums.controller" bgcolor="#E6E6FA">
+    <span ng-include="'/widget/nav'"></span>
+    <div class="container">
+    <div ng-if="user_profile">
+      <div class="jumbotron" ng-if="user_profile">
+        <div class="row">
+          <div class="col-xs-2 col-md-1">
+            <a href="#" class="thumbnail">
+              <img ng-src="{{user_profile._json.picture.data.url}}">
+            </a>
+          </div>
+          
+              <p class="lead">ยินดีต้อนรับคุณ {{user_profile.displayName}}</p>
+          
+          <a class="btn btn-primary " href="/cat" role="button">เข้าสู่หน้าหลัก</a>
+          <a class="btn btn-danger " href="/logout" role="button">ออกจากระบบ</a>
+          
+        </div>
+
+
+      </div>
+       <div class="row">
+               <div class="col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">TOP NEW POST</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="list-group">
+                              <a href="#" class="list-group-item ">
+                                กระต่ายหิวกระโดด
+                              </a>
+                              <a href="#" class="list-group-item">อะล่องฉ่องแฉะ
+                              </a>
+                              <a href="#" class="list-group-item">ผมอยากอาบน้ำ
+                              </a>
+                            </div>
+                        </div>
+                   </div>
+               </div>
+               <div class="col-md-6">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">TOP POPULAR POST</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="list-group">
+                              <a href="#" class="list-group-item ">
+                                กระต่ายหิวกระโดด
+                              </a>
+                              <a href="#" class="list-group-item">อะล่องฉ่องแฉะ
+                              </a>
+                              <a href="#" class="list-group-item">ผมอยากอาบน้ำ
+                              </a>
+                            </div>
+                        </div>
+                   </div>
+               </div>
+           </div>
+           
+       
+    </div>
+      <!-- <a href="/auth/facebook" ng-if="!user_profile">
+        <img ng-src="/img/facebook-login.png" width="20%">
+      </a> -->
+      <center>
+       <img ng-src="/img/nodejs.png" width="50%" ng-if="!user_profile">
+       <blockquote ng-if="!user_profile">
+          <p>Mongoose Node.js Express.js Angular.js</p>
+          <small>Power by MEAN STACK <cite title="Source Title">....</cite></small>
+        </blockquote>
+        <!-- <img ng-src="/img/express-js.jpg"> -->
+
+      </center>
+
+    <!-- <h3>Project forums<span class="label label-default">New</span></h3>
+
+    <div class="row" ng-repeat="t in title">
+    			<div class="col-md-12 ">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-3 ">{{t.title}}</div>
+                </div>
+                <hr>
+                <div class="col-md-10 ">  จำนวนหัวข้อ <span class="badge">{{t.story_num}}</span> ยอดเข้าชม <span class="badge">{{t.title_view}}</span></div>
+                <div class="col-md-2 "><button type="button" class="btn btn-default" name="button">เข้าชม</button></div>
+              </div>
+            </div>
+    			</div>
+    	</div> -->
+    </div>
+
+  </body>
+
+</html>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="/js/angular.main.js"></script>
+<script src="/js/function_tool.js"></script>
+<script src="/js/angular.controller.forums.js"></script>
